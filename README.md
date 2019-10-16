@@ -1,2 +1,2 @@
 # VIVO
-VIVO is a lightweight Javascript form validator
+VIVO is a lightweight Javascript input validator
