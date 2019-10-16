@@ -33,14 +33,20 @@ const min = function(length) {
     return (this);
 }
 
-const pattern = function(pattern) {
-    this.hasPattern = pattern;
+const pattern = function(pattern, message = null) {
+    this.hasPattern.pattern = pattern;
+    this.hasPattern.message = message;
     return (this);
 }
 
 const birthdate = function() {
     this.isBirthdate = true;
     return (this);
+}
+
+const ref = function(refValue) {
+    this.reference = refValue;
+    return(this);
 }
 
 module.exports = {
@@ -52,4 +58,5 @@ module.exports = {
     alpha,
     alphanum,
     birthdate,
+    ref
 }

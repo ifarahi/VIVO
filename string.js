@@ -6,6 +6,13 @@ const validate = function (input) {
     if (this.isRequired === true && input === undefined)
         return `${this.label} is required.`;
 
+    if (this.reference !== false)
+    {
+        if (input !== this.reference[1])
+            return (`${this.reference[0]} does not match`);
+        else
+            return (null)
+    }
     if (this.isBirthdate === true) {
         const [month = null, day = null, year = null] = input.split('-');
         const nowDate = new Date();
@@ -38,21 +45,29 @@ const validate = function (input) {
         return `invalid ${this.label} must contain only characters from (a-Z)`;
     if (this.isAlphanum === true && !/^[a-z0-9]+$/i.test(input.trim())) 
         return `invalid ${this.label} must contain only characters from (a-Z) or (0-9)`;
-    if (this.hasPattern !== null && !this.hasPattern.test(input))
-        return `invalid ${this.label} does not match the given pattern`;
+    if (this.hasPattern !== null && !this.hasPattern.pattern.test(input)) {
+        if (this.hasPattern.message !== null)
+            return `invalid ${this.label} ${this.hasPattern.message}`;
+        else
+            return `invalid ${this.label} does not match the given pattern`;
+    }
     return (null);
 }
 
 module.exports = () =>  {
     return {
         label: '',
+        reference: false,
         isEmail: false,
         isBirthdate: false,
         isRequired: false,
         maxLength: null,
         minLength: null,
         isAlpha: false,
-        hasPattern: null,
+        hasPattern: {
+            pattern: null,
+            message: null
+        },
         required: stringTools.required,
         max: stringTools.max,
         min: stringTools.min,
@@ -61,6 +76,7 @@ module.exports = () =>  {
         alphanum: stringTools.alphanum,
         email: stringTools.email,
         birthdate: stringTools.birthdate,
+        ref: stringTools.ref,
         validate
     };
 };

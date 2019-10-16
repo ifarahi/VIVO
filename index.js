@@ -11,6 +11,8 @@ const _validate = async (schema, data) => {
         const input = data[key];
         const field = schema[key];
     
+        if (field.reference !== false)
+            field.reference = [field.reference, data[field.reference]];
         field.label = key;
         errorMessage = field.validate(input);
         if (errorMessage !== null) {
