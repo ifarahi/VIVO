@@ -1,0 +1,47 @@
+{
+  "_from": "vivo-input-validator",
+  "_id": "vivo-input-validator@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-ILg6I71cGMzAE+3JUiw7WXvtIMQi4vpy0UaUC5wBkGsv+iOcndA1Rljk5xub/5Ud7kjyBvBX7u27VN4FBGp9YQ==",
+  "_location": "/vivo-input-validator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "vivo-input-validator",
+    "name": "vivo-input-validator",
+    "escapedName": "vivo-input-validator",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vivo-input-validator/-/vivo-input-validator-1.0.0.tgz",
+  "_shasum": "711433355d3bbd910cd87dd06d5f4ebe6760d3e6",
+  "_spec": "vivo-input-validator",
+  "_where": "/Users/ifarahi/42_cursus/matcha",
+  "author": {
+    "name": "ifarahi"
+  },
+  "bugs": {
+    "url": "https://github.com/ifarahi/VIVO/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "vivo is a lightweight input validator",
+  "homepage": "https://github.com/ifarahi/VIVO#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "vivo-input-validator",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ifarahi/VIVO.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.0"
+}
