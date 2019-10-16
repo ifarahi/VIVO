@@ -1,8 +1,3 @@
-const string = function() {
-    this.isString = true;
-    return (this);
-}
-
 const number = function() {
     this.isNumber = true;
     return (this);
@@ -43,14 +38,18 @@ const pattern = function(pattern) {
     return (this);
 }
 
+const birthdate = function() {
+    this.isBirthdate = true;
+    return (this);
+}
+
 module.exports = {
-    string,
-    number,
     email,
     required,
     max,
     min,
     pattern,
     alpha,
-    alphanum
+    alphanum,
+    birthdate,
 }
