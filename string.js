@@ -43,8 +43,8 @@ const validate = function (input) {
         return `invalid ${this.label} must be at least ${this.minLength} characters`;
     if (this.isAlpha === true && !/^[a-z]+$/i.test(input.trim())) 
         return `invalid ${this.label} must contain only characters from (a-Z)`;
-    if (this.isAlphanum === true && !/^[a-z0-9]+$/i.test(input.trim())) 
-        return `invalid ${this.label} must contain only characters from (a-Z) or (0-9)`;
+    if (this.isAlphanum === true && (!/^[a-z0-9]+$/i.test(input.trim()) || /^[0-9]+$/.test(input.trim()))) 
+        return `invalid ${this.label} must contain only characters from (a-Z) or characters and numbers`;
     if (this.hasPattern.pattern !== null && !this.hasPattern.pattern.test(input)) {
         if (this.hasPattern.message !== null)
             return `invalid ${this.label} ${this.hasPattern.message}`;

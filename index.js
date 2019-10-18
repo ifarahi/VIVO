@@ -6,6 +6,7 @@ const _validate = async (schema, data) => {
     const details = {};
     let errorMessage = null;
     let has_error = false;
+    const errorObject = {};
 
     dataArray.forEach((key) => {
         const input = data[key];
@@ -21,7 +22,6 @@ const _validate = async (schema, data) => {
         }
     });
     if (has_error) {
-        const errorObject = new Error('Validation fails.');
         errorObject.details = details;
         throw errorObject;
     }
